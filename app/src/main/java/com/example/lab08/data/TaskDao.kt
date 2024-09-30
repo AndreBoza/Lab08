@@ -16,4 +16,7 @@ interface TaskDao {
 
     @Delete
     suspend fun deleteTask(task: Task)
+
+    @Query("DELETE FROM tasks") // Se agrega esta línea para eliminar todas las tareas
+    suspend fun deleteAllTasks() // Cambiado para que sea 'suspend'
 }
